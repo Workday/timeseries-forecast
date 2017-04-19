@@ -27,6 +27,24 @@
   </properties>
   <!-- Build Settings -->
   <!-- More Project Information -->
+  <name>timeseries-forecast</name>
+  <description>This is a Java open source library which provides a time series forecasting functionality. It is an implementation of the Hannan-Rissanen algorithm for additive ARIMA models.</description>
+  <url>https://github.com/Workday/timeseries-forecast</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+    </license>
+  </licenses>
   <!-- Environment Settings -->
+  <distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
