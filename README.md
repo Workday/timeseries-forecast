@@ -51,7 +51,7 @@ How to Build
 ---
 This library uses Maven as its build tool.
 
-```
+```java
 // Compile the source code of the project.
 mvn compile
 
