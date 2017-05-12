@@ -11,7 +11,6 @@ import com.workday.insights.timeseries.arima.struct.ArimaModel;
 import com.workday.insights.timeseries.arima.struct.ArimaParams;
 import com.workday.insights.timeseries.arima.struct.ForecastResult;
 import com.workday.insights.timeseries.timeseriesutil.ForecastUtil;
-import java.util.List;
 
 /**
  * ARIMA implementation
@@ -27,20 +26,19 @@ public final class Arima {
      * @param data UNMODIFIED, list of double numbers representing time-series with constant time-gap
      * @param forecastSize integer representing how many data points AFTER the data series to be
      *        forecasted
-     * @param p ARIMA parameter, the order (number of time lags) of the autoregressive model
-     * @param d ARIMA parameter, the degree of differencing
-     * @param q ARIMA parameter, the order of the moving-average model
-     * @param P ARIMA parameter, autoregressive term for the seasonal part
-     * @param D ARIMA parameter, differencing term for the seasonal part
-     * @param Q ARIMA parameter, moving average term for the seasonal part
-     * @param m ARIMA parameter, the number of periods in each season
+     * @param params ARIMA parameters
      * @return a ForecastResult object, which contains the forecasted values and/or error message(s)
      */
-    public static ForecastResult forecast_arima(final double[] data, final int forecastSize,
-                                                int p, int d, int q, int P, int D, int Q, int m) {
+    public static ForecastResult forecast_arima(final double[] data, final int forecastSize, ArimaParams params) {
 
         try {
-
+            final int p = params.p;
+            final int d = params.d;
+            final int q = params.q;
+            final int P = params.P;
+            final int D = params.D;
+            final int Q = params.Q;
+            final int m = params.m;
             final ArimaParams paramsForecast = new ArimaParams(p, d, q, P, D, Q, m);
             final ArimaParams paramsXValidation = new ArimaParams(p, d, q, P, D, Q, m);
             // estimate ARIMA model parameters for forecasting
