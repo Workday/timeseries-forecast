@@ -4,6 +4,7 @@ jdk:
 script:
 - mvn clean test
 deploy:
+  skip_cleanup: true
   provider: script
   script: scripts/release.sh
   on:
