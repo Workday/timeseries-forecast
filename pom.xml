@@ -12,7 +12,7 @@
   <!-- The Basics -->
   <groupId>com.workday</groupId>
   <artifactId>timeseries-forecast</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -63,7 +63,7 @@
     <url>git@github.com:Workday/timeseries-forecast.git</url>
     <connection>scm:git:git@github.com:Workday/timeseries-forecast.git</connection>
     <developerConnection>scm:git:git@github.com:Workday/timeseries-forecast.git</developerConnection>
-    <tag>timeseries-forecast-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>
