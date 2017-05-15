@@ -3,6 +3,7 @@ jdk:
 - oraclejdk8
 script:
 - mvn clean test
+- chomd -x scripts/release.sh
 deploy:
   skip_cleanup: true
   provider: script
