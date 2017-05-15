@@ -62,6 +62,7 @@
   <scm>
     <url>git@github.com:Workday/timeseries-forecast.git</url>
     <connection>scm:git:git@github.com:Workday/timeseries-forecast.git</connection>
+    <developerConnection>scm:git:git@github.com:Workday/timeseries-forecast/</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <developers>
