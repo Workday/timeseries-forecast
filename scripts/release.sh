@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-mvn deploy -P release --settings settings.xml
+mvn -B release:prepare release:perform --settings settings.xml
