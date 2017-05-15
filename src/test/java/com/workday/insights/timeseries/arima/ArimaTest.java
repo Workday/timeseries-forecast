@@ -7,11 +7,10 @@
 
 package com.workday.insights.timeseries.arima;
 
+import com.workday.insights.timeseries.arima.struct.ArimaParams;
 import com.workday.insights.timeseries.arima.struct.ForecastResult;
 import com.workday.insights.timeseries.timeseriesutil.ForecastUtil;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -67,8 +66,9 @@ public class ArimaTest {
         int p, int d, int q, int P, int D, int Q, int m) {
 
         //Make forecast
+
         final ForecastResult forecastResult = Arima
-            .forecast_arima(trainingData, forecastSize, p, d, q, P, D, Q, m);
+            .forecast_arima(trainingData, forecastSize, new ArimaParams(p, d, q, P, D, Q, m));
         //Get forecast data and confidence intervals
         final double[] forecast = forecastResult.getForecast();
         final double[] upper = forecastResult.getForecastUpperConf();
