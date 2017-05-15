@@ -7,7 +7,7 @@
     </server>
     <server>
       <id>gpg.passphrase</id>
-      <passphrase>jccg1000056899</passphrase>
+      <passphrase>${env.CI_GPG_PASSPHRASE}</passphrase>
     </server>
   </servers>
 </settings>
