@@ -1,12 +1,9 @@
 language: java
 jdk:
 - oraclejdk8
-before_install:
-- chmod +x scripts/release.sh
 script:
 - mvn clean test
 after_success:
-- chmod +x scripts/release.sh
 - ./scripts/release.sh
 env:
   global:
