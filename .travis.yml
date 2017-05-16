@@ -4,12 +4,8 @@ jdk:
 script:
 - mvn clean test
 - chmod -x scripts/release.sh
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: ./scripts/release.sh
-  on:
-    branch: master
+after_success:
+- ./scripts/release.sh
 env:
   global:
   - secure: LYdA6FZR8c7Js9gAvDd5ZnmeIV3YWPJD8PaKAhwXiuTWHLN1PTildsIevlq9pclmaAmmchP1yUPWqHwDo2fDKM3lOGoG3Fg4Qh4LYwnrlfctaGLI0lEmzGwJ/nlDDXZFLxboWEKqXVj+rRp+nu8ViELEC3f1jzKLaCoMBlzWg6NiymYKsVOpD7ZNW7u1Si1mRJq2WMoD+vTONj+yR1yYSse4UrMwZuq3Tqhm9ZtdCLKXaspaunAnOGPYNkZcqgMzxkQeJgvLYNNC8n0PyjaXQTzpJNnT5diDIFEsKYfdksLtJlOf6tJkAgtH3e1USvb9gHOXCO+aREeP2uRzWawKSbJxZ9KMh7X7qHppgt2F2RTJGpqHwfr01WUJV1Qdf68H5y5dhMkESr+hhvhWCjmvkVApJiVPSD3mAQSxwsSYK2NFR6etPI9PQRwoRzeH3Z0FQqZTJzkMEJ1SWoCC/NuUvJJwc4NBVmA+9QZ5zBrhAjCxTFqIjxqj/ybmTMFh5s/1ziYYKWQqD7BikTlcjDdR0VFE7sFtxpGl7jmH3U4Kjgn5iUfo40TAH64hqnmAxZOJUyukPhm6w//5adXGOzY95q0w6viheBJAg3krQ63VMbFaepCaeX2BPZoQV0wSYWY++0k/+7R6aQZjY4B2KgBpzvkChNo6ZURdaB3PSfV3U34=
