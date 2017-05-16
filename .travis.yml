@@ -7,7 +7,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: scripts/release.sh
+  script: ./scripts/release.sh
   on:
     branch: master
 env:
