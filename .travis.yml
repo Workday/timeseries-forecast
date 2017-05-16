@@ -3,8 +3,8 @@ jdk:
 - oraclejdk8
 script:
 - mvn clean test
-- chmod -x scripts/release.sh
 after_success:
+- chmod -x scripts/release.sh
 - ./scripts/release.sh
 env:
   global:
