@@ -1,6 +1,9 @@
 language: java
 jdk:
 - oraclejdk8
+before_install:
+- chmod +x scripts/before_release.sh
+- chmod +x scripts/release.sh
 install:
 - mvn install -P !build-extras -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
