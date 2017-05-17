@@ -9,7 +9,7 @@ cache:
   directories:
     - ~/.m2/repository
 after_success:
-  - ./scripts/before-release.sh
+  - ./scripts/before_release.sh
   - ./scripts/release.sh
 env:
   global:
