@@ -12,7 +12,7 @@
   <!-- The Basics -->
   <groupId>com.workday</groupId>
   <artifactId>timeseries-forecast</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
