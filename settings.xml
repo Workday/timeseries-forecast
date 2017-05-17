@@ -5,10 +5,20 @@
       <username>${env.CI_DEPLOY_USERNAME}</username>
       <password>${env.CI_DEPLOY_PASSWORD}</password>
     </server>
-    <server>
-      <id>gpg.passphrase</id>
-      <passphrase>${env.CI_GPG_PASSPHRASE}</passphrase>
-    </server>
   </servers>
+  <profiles>
+    <profile>
+      <id>ossrh</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.keyname>${env.GPG_KEY_NAME}</gpg.keyname>
+        <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+      </properties>
+
+    </profile>
+  </profiles>
 </settings>
 
