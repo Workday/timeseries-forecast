@@ -108,6 +108,53 @@ public class ArimaTest {
         return forecast;
     }
 
+    private double commonTestCalculateRMSE(final String name, final double[] trainingData,
+        final double[] trueForecastData, final int forecastSize,
+        int p, int d, int q, int P, int D, int Q, int m) {
+
+        //Make forecast
+
+        final ForecastResult forecastResult = Arima
+            .forecast_arima(trainingData, forecastSize, new ArimaParams(p, d, q, P, D, Q, m));
+        //Get forecast data and confidence intervals
+        final double[] forecast = forecastResult.getForecast();
+        final double[] upper = forecastResult.getForecastUpperConf();
+        final double[] lower = forecastResult.getForecastLowerConf();
+        //Building output
+        final StringBuilder sb = new StringBuilder();
+        sb.append(name).append("  ****************************************************\n");
+        sb.append("Input Params { ")
+            .append("p: ").append(p)
+            .append(", d: ").append(d)
+            .append(", q: ").append(q)
+            .append(", P: ").append(P)
+            .append(", D: ").append(D)
+            .append(", Q: ").append(Q)
+            .append(", m: ").append(m)
+            .append(" }");
+        sb.append("\n\nFitted Model RMSE: ").append(dbl2str(forecastResult.getRMSE()));
+        sb.append("\n\n      TRUE DATA    |     LOWER BOUND          FORECAST       UPPER BOUND\n");
+
+        for (int i = 0; i < forecast.length; ++i) {
+            sb.append(dbl2str(trueForecastData[i])).append("    | ")
+            .append(dbl2str(lower[i])).append("   ").append(dbl2str(forecast[i]))
+            .append("   ").append(dbl2str(upper[i]))
+            .append("\n");
+        }
+
+        sb.append("\n");
+
+        //Compute RMSE against true forecast data
+        double temp = 0.0;
+        for (int i = 0; i < forecast.length; ++i) {
+            temp += Math.pow(forecast[i] - trueForecastData[i], 2);
+        }
+        final double rmse = Math.pow(temp / forecast.length, 0.5);
+        sb.append("RMSE = ").append(dbl2str(rmse)).append("\n\n");
+        System.out.println(sb.toString());
+        return rmse;
+    }
+
     private void commonAssertionLogic(double[] dataSet, double actualValue, double delta) {
         double lastTrueValue = dataSet[dataSet.length - 1];
         Assert.assertEquals(lastTrueValue, actualValue, delta);
@@ -216,4 +263,28 @@ public class ArimaTest {
         double lastActualData = forecast[forecast.length - 1];
         commonAssertionLogic(Datasets.simple_data3_answer, lastActualData, 0.31);
     }
+
+    @Test
+    public void cscchris_test() {
+        final int[] params = new int[]{0, 1, 2, 3};
+        int best_p, best_d, best_q, best_P, best_D, best_Q, best_m;
+        best_p = best_d = best_q = best_P = best_D = best_Q = best_m = -1;
+        double best_rmse = -1.0;
+        for(int p : params) for(int d : params) for(int q : params) for(int P : params)
+            for(int D : params) for(int Q : params) for(int m : params) try {
+                final double rmse = commonTestCalculateRMSE("cscchris_test",
+                    Datasets.cscchris_val, Datasets.cscchris_answer, 6, p, d, q, P, D, Q, m);
+                if (best_rmse < 0.0 || rmse < best_rmse) {
+                    best_rmse = rmse; best_p = p; best_d = d; best_q = q;
+                    best_P = P; best_D = D; best_Q = q; best_m = m;
+                    System.out.printf(
+                        "Better (RMSE,p,d,q,P,D,Q,m)=(%f,%d,%d,%d,%d,%d,%d,%d)\n", rmse,p,d,q,P,D,Q,m);
+                }
+            } catch (final Exception ex) {
+                System.out.printf("Invalid: (p,d,q,P,D,Q,m)=(%d,%d,%d,%d,%d,%d,%d)\n", p,d,q,P,D,Q,m);
+
+            }
+        System.out.printf("Best (RMSE,p,d,q,P,D,Q,m)=(%f,%d,%d,%d,%d,%d,%d,%d)\n",
+            best_rmse,best_p,best_d,best_q,best_P,best_D,best_Q,best_m);
+}
 }
