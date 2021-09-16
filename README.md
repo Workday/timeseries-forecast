@@ -71,9 +71,9 @@ mvn install
 Dependencies
 ---
 
-The library has the following dependencies:
+The library has the following test dependencies:
 ```
-JUnit 4.12
+JUnit 4.13.2
 ```
 
 Authors

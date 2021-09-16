@@ -21,20 +21,20 @@ public class InsightsMatrixTest {
             {3.0, 3.0, 3.0}};
 
         InsightsMatrix im1 = new InsightsMatrix(data, false);
-        Assert.assertTrue(im1.getNumberOfColumns() == 3);
-        Assert.assertTrue(im1.getNumberOfRows() == 3);
+        Assert.assertEquals(3, im1.getNumberOfColumns());
+        Assert.assertEquals(3, im1.getNumberOfRows());
         for (int i = 0; i < im1.getNumberOfColumns(); i++) {
             for (int j = 0; j < im1.getNumberOfColumns(); j++) {
-                Assert.assertTrue(im1.get(i, j) == 3.0);
+                Assert.assertEquals(3.0, im1.get(i, j), 0.0);
             }
         }
         im1.set(0, 0, 0.0);
-        Assert.assertTrue(im1.get(0, 0) == 0.0);
+        Assert.assertEquals(0.0, im1.get(0, 0), 0.0);
         im1.set(0, 0, 3.0);
 
         InsightsVector iv = new InsightsVector(3, 3.0);
         for (int i = 0; i < im1.getNumberOfColumns(); i++) {
-            Assert.assertTrue(im1.timesVector(iv).get(i) == 27.0);
+            Assert.assertEquals(27.0, im1.timesVector(iv).get(i), 0.0);
         }
     }
 
@@ -51,7 +51,7 @@ public class InsightsMatrixTest {
 
         InsightsVector solved = im.solveSPDIntoVector(iv, -1);
         for (int i = 0; i < solved.size(); i++) {
-            Assert.assertTrue(solved.get(i) == solution[i]);
+            Assert.assertEquals(solved.get(i), solution[i], 0.0);
         }
     }
 
@@ -70,7 +70,7 @@ public class InsightsMatrixTest {
 
         InsightsVector solved = im.solveSPDIntoVector(iv, -1);
         for (int i = 0; i < solved.size(); i++) {
-            Assert.assertTrue(solved.get(i) == solution[i]);
+            Assert.assertEquals(solved.get(i), solution[i], 0.0);
         }
     }
 
@@ -89,7 +89,7 @@ public class InsightsMatrixTest {
 
         InsightsVector solved = im.timesVector(iv);
         for (int i = 0; i < solved.size(); i++) {
-            Assert.assertTrue(solved.get(i) == solution[i]);
+            Assert.assertEquals(solved.get(i), solution[i], 0.0);
 
         }
     }

@@ -17,15 +17,15 @@ public class InsightsVectorTest {
     public void constructorTests() {
         InsightsVector iv = new InsightsVector(10, 3.0);
 
-        Assert.assertTrue(iv.size() == 10);
+        Assert.assertEquals(10, iv.size());
         for (int i = 0; i < iv.size(); i++) {
-            Assert.assertTrue(iv.get(i) == 3.0);
+            Assert.assertEquals(3.0, iv.get(i), 0.0);
         }
 
         double[] data = {3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0};
         InsightsVector iv3 = new InsightsVector(data, false);
         for (int i = 0; i < iv3.size(); i++) {
-            Assert.assertTrue(iv3.get(i) == 3.0);
+            Assert.assertEquals(3.0, iv3.get(i), 0.0);
         }
     }
 

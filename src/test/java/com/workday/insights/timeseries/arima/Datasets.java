@@ -20,14 +20,14 @@ public final class Datasets {
     /**
      * Simple one two tree four five
      */
-    public static double[] simple12345 = {1.0, 2.0, 3.0, 4.0, 5.0};
+    public static final double[] simple12345 = {1.0, 2.0, 3.0, 4.0, 5.0};
 
     /**
      * a10 Monthly anti-diabetic drug sales in Australia from 1992 to 2008. strong complex seasonal
      * component as well as a (super)linear trend
      * [Source] https://rdrr.io/cran/fpp/man/a10.html
      */
-    public static String[] a10_key = {"07-1991", "08-1991", "09-1991", "10-1991", "11-1991",
+    public static final String[] a10_key = {"07-1991", "08-1991", "09-1991", "10-1991", "11-1991",
         "12-1991", "01-1992", "02-1992", "03-1992",
         "04-1992", "05-1992", "06-1992", "07-1992", "08-1992", "09-1992", "10-1992", "11-1992",
         "12-1992",
@@ -73,7 +73,7 @@ public final class Datasets {
         "12-2007",
         "01-2008", "02-2008", "03-2008", "04-2008", "05-2008", "06-2008"};
 
-    public static double[] a10_val = {3.526591, 3.180891, 3.252221, 3.611003, 3.565869, 4.306371,
+    public static final double[] a10_val = {3.526591, 3.180891, 3.252221, 3.611003, 3.565869, 4.306371,
         5.088335, 2.814520, 2.985811, 3.204780,
         3.127578, 3.270523, 3.737851, 3.558776, 3.777202, 3.924490, 4.386531, 5.810549, 6.192068,
         3.450857,
@@ -121,7 +121,7 @@ public final class Datasets {
      * strong simple seasonal component, part of a trend that then discontinues
      * [Source] https://rdrr.io/cran/fpp/man/ausbeer.html
      */
-    public static String[] ausbeer_key = {"1956:Q1", "1956:Q2", "1956:Q3", "1956:Q4", "1957:Q1",
+    public static final String[] ausbeer_key = {"1956:Q1", "1956:Q2", "1956:Q3", "1956:Q4", "1957:Q1",
         "1957:Q2", "1957:Q3", "1957:Q4", "1958:Q1",
         "1958:Q2", "1958:Q3", "1958:Q4", "1959:Q1", "1959:Q2", "1959:Q3", "1959:Q4", "1960:Q1",
         "1960:Q2",
@@ -169,7 +169,7 @@ public final class Datasets {
         "2007:Q3",
         "2007:Q4", "2008:Q1", "2008:Q2", "2008:Q3", "2008:Q4"};
 
-    public static double[] ausbeer_val = {284.0, 213.0, 227.0, 308.0, 262.0, 228.0, 236.0, 320.0,
+    public static final double[] ausbeer_val = {284.0, 213.0, 227.0, 308.0, 262.0, 228.0, 236.0, 320.0,
         272.0, 233.0, 237.0, 313.0, 261.0, 227.0, 250.0, 314.0, 286.0, 227.0, 260.0, 311.0, 295.0,
         233.0, 257.0,
         339.0, 279.0, 250.0, 270.0, 346.0, 294.0, 255.0, 278.0, 363.0, 313.0, 273.0, 300.0, 370.0,
@@ -195,7 +195,7 @@ public final class Datasets {
      * random on a larger range than the trend can show --- good edge case
      * [Source] https://rdrr.io/cran/fpp/man/elecequip.html
      */
-    public static String[] elecequip_key = {"01-1996", "02-1996", "03-1996", "04-1996", "05-1996",
+    public static final String[] elecequip_key = {"01-1996", "02-1996", "03-1996", "04-1996", "05-1996",
         "06-1996", "07-1996", "08-1996", "09-1996",
         "10-1996", "11-1996", "12-1996", "01-1997", "02-1997", "03-1997", "04-1997", "05-1997",
         "06-1997",
@@ -238,7 +238,7 @@ public final class Datasets {
         "01-2011", "02-2011", "03-2011", "04-2011", "05-2011", "06-2011", "07-2011", "08-2011",
         "09-2011",
         "10-2011", "11-2011"};
-    public static double[] elecequip_val = {79.43, 75.86, 86.40, 72.67, 74.93, 83.88, 79.88, 62.47,
+    public static final double[] elecequip_val = {79.43, 75.86, 86.40, 72.67, 74.93, 83.88, 79.88, 62.47,
         85.50, 83.19, 84.29, 89.79, 78.72, 77.49, 89.94,
         81.35, 78.76, 89.59, 83.75, 69.87, 91.18, 89.52, 91.12, 92.97, 81.97, 85.26, 93.09, 81.19,
         85.74, 91.24,
@@ -271,7 +271,7 @@ public final class Datasets {
      * end, local vs global trend, test overfitting p value (great for grid searching)
      * [Source] https://rdrr.io/cran/fpp/man/euretail.html
      */
-    public static String[] euretail_key = {"1996:Q1", "1996:Q2", "1996:Q3", "1996:Q4", "1997:Q1",
+    public static final String[] euretail_key = {"1996:Q1", "1996:Q2", "1996:Q3", "1996:Q4", "1997:Q1",
         "1997:Q2", "1997:Q3", "1997:Q4", "1998:Q1",
         "1998:Q2", "1998:Q3", "1998:Q4", "1999:Q1", "1999:Q2", "1999:Q3", "1999:Q4", "2000:Q1",
         "2000:Q2",
@@ -301,7 +301,7 @@ public final class Datasets {
      * find any good fit
      * [Source] https://github.com/cran/fpp/blob/master/man/usconsumption.Rd
      */
-    public static String[] usconsumption_key = {"1970:Q1", "1970:Q2", "1970:Q3", "1970:Q4",
+    public static final String[] usconsumption_key = {"1970:Q1", "1970:Q2", "1970:Q3", "1970:Q4",
         "1971:Q1", "1971:Q2", "1971:Q3", "1971:Q4", "1972:Q1",
         "1972:Q2", "1972:Q3", "1972:Q4", "1973:Q1", "1973:Q2", "1973:Q3", "1973:Q4", "1974:Q1",
         "1974:Q2",
@@ -338,7 +338,7 @@ public final class Datasets {
         "2008:Q2", "2008:Q3", "2008:Q4", "2009:Q1", "2009:Q2", "2009:Q3", "2009:Q4", "2010:Q1",
         "2010:Q2",
         "2010:Q3", "2010:Q4"};
-    public static double[] usconsumption_val = {0.61227692, 0.45492979, 0.87467302, -0.27251439,
+    public static final double[] usconsumption_val = {0.61227692, 0.45492979, 0.87467302, -0.27251439,
         1.89218699, 0.91337819, 0.79285790, 1.64999566,
         1.32724825, 1.88990506, 1.53272416, 2.31705777, 1.81385569, -0.05055772, 0.35966722,
         -0.29331546,
@@ -381,7 +381,7 @@ public final class Datasets {
 
     // Yearly numbers of sunspots
     // [Source] https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/sunspot.year.html
-    public static double[] sunspots_val = {5, 11, 16, 23, 36, 58, 29, 20, 10, 8, 3, 0, 0, 2, 11, 27,
+    public static final double[] sunspots_val = {5, 11, 16, 23, 36, 58, 29, 20, 10, 8, 3, 0, 0, 2, 11, 27,
         47, 63, 60, 39, 28, 26, 22, 11, 21, 40, 78, 122, 103, 73,
         47, 35, 11, 5, 16, 34, 70, 81, 111, 101, 73, 40, 20, 16, 5, 11, 22, 40, 60, 80.9, 83.4,
         47.7, 47.8, 30.7, 12.2, 9.6, 10.2, 32.4,
@@ -410,7 +410,7 @@ public final class Datasets {
         29.9, 17.5, 8.6, 21.5, 64.3, 93.3, 119.6, 111, 104, 63.7, 40.4, 29.8, 15.2, 7.5, 2.9};
 
     // Number of potholes on Chicago streets
-    public static double[] chicago_potholes_val = {1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1,
+    public static final double[] chicago_potholes_val = {1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1,
         1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 3,
         1, 1, 2, 1, 2, 1, 7, 2, 1, 1, 1, 2, 1, 3, 1, 3, 1, 4, 3, 1, 2, 1, 1, 1, 6, 1, 1, 3, 1, 1, 1,
         2, 2, 3, 3, 1, 2, 2, 1, 4, 2,
@@ -595,17 +595,17 @@ public final class Datasets {
         91, 71, 30, 34, 71, 103, 77, 89, 55, 31};
 
     // some synthetic data to be used for testing
-    public static double[] simple_data1_val = new double[]{2, 1, 2, 5, 2, 1, 2, 5, 2, 1, 2, 5, 2, 1,
+    public static final double[] simple_data1_val = new double[]{2, 1, 2, 5, 2, 1, 2, 5, 2, 1, 2, 5, 2, 1,
         2, 5, 2, 1, 2, 5, 2, 1, 2, 5, 2, 1, 2, 5, 2, 1, 2, 5, 2};
-    public static double[] simple_data2_val = new double[]{2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    public static final double[] simple_data2_val = new double[]{2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
         2, 2};
-    public static double[] simple_data3_val = new double[]{0.984, 1.012, 1.045, 1.109, 1.112, 1.458,
+    public static final double[] simple_data3_val = new double[]{0.984, 1.012, 1.045, 1.109, 1.112, 1.458,
         1.892, 2.018, 2.203, 2.43, 1.897, 0.894, 1.02,
         1.082, 1.109, 1.201, 1.254, 1.562, 2.093, 2.104, 2.540, 2.893, 1.990, 1.035, 1.309, 1.403,
         1.498, 1.73, 1.789, 1.897, 2.309, 2.543, 2.783, 3.093, 2.345, 1.473, 1.234, 1.320, 1.293,
         1.523, 1.432, 1.435, 1.987, 2.235, 2.453, 2.765, 2.097, 1.291, 1.192, 1.109, 1.146, 1.356,
         1.472, 1.592, 2.395, 2.483, 2.698, 2.895, 2.197, 1.303};
-    public static double[] simple_data3_answer = new double[]{1.435, 1.532, 1.563, 1.436, 1.578,
+    public static final double[] simple_data3_answer = new double[]{1.435, 1.532, 1.563, 1.436, 1.578,
         1.799, 2.538};
 
     /**
@@ -639,8 +639,8 @@ public final class Datasets {
     /**
      * Question from cscchris
      */
-    public static double[] cscchris_val = new double[]{
+    public static final double[] cscchris_val = new double[]{
         2674.8060304978917, 3371.1788109723193, 2657.161969121835, 2814.5583226655367, 3290.855749923403, 3103.622791045206, 3403.2011487950185, 2841.438925235243, 2995.312700153925, 3256.4042898633224, 2609.8702933486843, 3214.6409110870877, 2952.1736018157644, 3468.7045537306344, 3260.9227206904898, 2645.5024256492215, 3137.857549381811, 3311.3526531674556, 2929.7762119375716, 2846.05991810631, 2606.47822546165, 3174.9770937667918, 3140.910443979614, 2590.6601484185085, 3123.4299821259915, 2714.4060964141136, 3133.9561758319487, 2951.3288157912752, 2860.3114228342765, 2757.4279640677833};
-    public static double[] cscchris_answer = new double[]{
+    public static final double[] cscchris_answer = new double[]{
         3147.816496825682, 3418.2300802476093, 2856.905414401418, 3419.0312162705545, 3307.9803365878442, 3527.68377555284};
 }

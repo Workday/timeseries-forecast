@@ -57,8 +57,7 @@ public class ArimaTest {
 
     private String dbl2str(final double value) {
         String rep = df.format(value);
-        String padded = String.format("%15s", rep);
-        return padded;
+        return String.format("%15s", rep);
     }
     
     private double[] commonTestSimpleForecast(final String name, final double[] trainingData,
